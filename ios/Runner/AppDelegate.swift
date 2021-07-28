@@ -10,6 +10,7 @@ import Flutter
     GeneratedPluginRegistrant.register(with: self)
     let controller:FlutterViewController = window.rootViewController as! FlutterViewController
     MyMethodChannel(messenger: controller.binaryMessenger)
+    MyBasicChannel(messenger: controller.binaryMessenger)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

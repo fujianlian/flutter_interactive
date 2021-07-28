@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_interactive/method_channel.dart';
+
+import 'basic_method_channel.dart';
 
 void main() {
   runApp(MyApp());
@@ -76,6 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
         new MaterialPageRoute(builder: (context) => new MethodChannelPage()),
       );
     } else if (index == 2) {
+      Navigator.push(
+        _context,
+        new MaterialPageRoute(builder: (context) => new BasicChannelPage()),
+      );
     } else {}
   }
 }
