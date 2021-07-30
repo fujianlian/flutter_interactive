@@ -9,5 +9,6 @@ class MainActivity : FlutterActivity() {
         super.configureFlutterEngine(flutterEngine)
         MyMethodChannel(flutterEngine.dartExecutor.binaryMessenger)
         MyBasicChannel(flutterEngine.dartExecutor.binaryMessenger)
+        MyEventChannel(flutterEngine.dartExecutor.binaryMessenger, this)
     }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_interactive/method_channel.dart';
 
 import 'basic_method_channel.dart';
+import 'event_channel.dart';
 
 void main() {
   runApp(MyApp());
@@ -83,6 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
         _context,
         new MaterialPageRoute(builder: (context) => new BasicChannelPage()),
       );
-    } else {}
+    } else {
+      Navigator.push(
+        _context,
+        new MaterialPageRoute(builder: (context) => new EventChannelPage()),
+      );
+    }
   }
 }
