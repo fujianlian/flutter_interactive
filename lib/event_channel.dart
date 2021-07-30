@@ -35,6 +35,7 @@ class _EventChannelPageState extends State<EventChannelPage> {
         body: Container(
           padding: EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text("重力传感器数值"),
               Padding(padding: EdgeInsets.only(top: 15)),
@@ -48,8 +49,6 @@ class _EventChannelPageState extends State<EventChannelPage> {
 
   //3.成功和错误回调
   void _onEventSuccess(message) {
-    print("---");
-    print(message[0]);
     this.setState(() {
       t1 = "x：" + message[0];
       t2 = "y：" + message[1];
