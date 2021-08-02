@@ -22,11 +22,11 @@ public class MyEventChannel: NSObject, FlutterStreamHandler {
         self.init()
         channel = FlutterEventChannel(name: "com.flutter.test.event_channel", binaryMessenger: messenger)
         channel?.setStreamHandler(self)
-        startTimer()
     }
  
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         eventSink = events
+        startTimer()
         return nil
     }
     
@@ -43,6 +43,8 @@ public class MyEventChannel: NSObject, FlutterStreamHandler {
     
     public func onCancel(withArguments arguments: Any?) -> FlutterError? {
         timer?.invalidate()
+        timer = nil
+        count = 0
         eventSink = nil
         return nil
     }
